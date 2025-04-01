@@ -1,3 +1,4 @@
+/* Reset global: Remove margens e paddings padrão, define box-sizing e fonte */
 * {
     margin: 0;
     padding: 0;
@@ -5,11 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
-header {
-    width: 100%;
-}
-
-/* Barra de promoção azul */
+/* Barra de promoção azul no topo da página */
 .promo-bar {
     background-color: #0052cc;
     color: white;
@@ -22,6 +19,7 @@ header {
     font-size: 14px;
 }
 
+/* Destaque "REAL" na barra de promoção */
 .real {
     background-color: #800080;
     color: white;
@@ -32,7 +30,7 @@ header {
     display: inline-block;
 }
 
-/* Seção principal do header */
+/* Seção principal do header: Contém logo, barra de pesquisa e ícones */
 .header-main {
     display: flex;
     align-items: center;
@@ -41,12 +39,12 @@ header {
     background-color: #fff;
 }
 
-/* Logo */
+/* Logo do site */
 .logo img {
     width: 140px;
 }
 
-/* Barra de pesquisa */
+/* Barra de pesquisa: Campo de entrada e botão de busca */
 .search-bar {
     flex: 1;
     display: flex;
@@ -54,7 +52,7 @@ header {
     border: 1px solid #ccc;
     border-radius: 10px;
     overflow: hidden;
-    max-width: 500px; /* Ajuste conforme necessário */
+    max-width: 500px;
     position: relative;
     right: 50px;
 }
@@ -76,10 +74,11 @@ header {
 
 .search-bar button img {
     background-color: transparent;
-    filter:invert(1);
+    filter: invert(1);
     height: 18px;
 }
 
+/* Placeholder do campo de pesquisa */
 ::-webkit-input-placeholder {
     color: rgb(0, 0, 0);
     font: 12px verdana, arial, sans-serif;
@@ -130,7 +129,7 @@ header {
 .nav-menu {
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
-    padding: 10px 110px; /* Alinhado com o padding do .header-main */
+    padding: 10px 110px;
     background-color: #fff;
     display: flex;
     align-items: center;
@@ -141,7 +140,7 @@ header {
     list-style: none;
     display: flex;
     gap: 20px;
-    justify-content: flex-start; /* Alinha os itens à esquerda, mas dentro do mesmo recuo */
+    justify-content: flex-start;
 }
 
 .nav-menu ul li a {
@@ -153,3 +152,53 @@ header {
 .nav-menu ul li a:hover {
     color: #0052cc;
 }
+
+/* Main */
+
+/* Banner promocional com imagem de fundo */
+.banner {
+    width: 100%;
+    padding: 0;
+    position: relative;
+    background-image: url('/src/images/fundo-1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Conteúdo dentro do banner: Imagem da cadeira e texto de preço */
+.banner-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+/* Imagem da cadeira posicionada à direita */
+.chair-image {
+    max-height: 100%;
+    max-width: 40%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    left: 70px;
+    margin-top: -130px;
+}
+
+/* Imagem do texto de preço posicionada à esquerda */
+.price-image {
+    right: 70px;
+    max-height: 80%;
+    max-width: 40%;
+    object-fit: contain;
+    position: relative;
+    z-index: 1;
+}
+
